@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator & Converter by ODEY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculator</h2>
+        <div class="screen" id="display">0</div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="backspace()">←</button>
+            <button onclick="percentage()">%</button>
+            <button onclick="setOperator('/')">÷</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="setOperator('*')">×</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="setOperator('-')">-</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="setOperator('+')">+</button>
+
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="negate()">±</button>
+            <button onclick="calculate()">=</button>
+        </div>
+        <div class="creator-tag">Created by ODEY</div>
+    </div>
+
+    <div class="converter">
+        <h2>Unit Converter</h2>
+        <div class="converter-group">
+            <select id="convertType" onchange="updateConversionUnits()">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+            </select>
+        </div>
+        <div class="converter-group">
+            <input type="number" id="fromValue" placeholder="Enter value" oninput="convert()">
+            <select id="fromUnit" onchange="convert()"></select>
+        </div>
+        <div class="converter-group">
+            <input type="number" id="toValue" readonly>
+            <select id="toUnit" onchange="convert()"></select>
+        </div>
+        <div class="creator-tag">Created by ODEY</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
